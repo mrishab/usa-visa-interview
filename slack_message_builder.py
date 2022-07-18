@@ -11,6 +11,13 @@ class SlackMessageBuilder:
 
         blocks = [
             {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "<!here>"
+                }
+            },
+            {
                 "type": "header",
                 "text": {
                     "type": "plain_text",
@@ -39,13 +46,10 @@ class SlackMessageBuilder:
                 }
             },
             {
-                "type": "divider"
-            },
-            {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "The closest visitor visa appointment is available in {first_city} in {first_number} {first_unit} followed by {second_city} and {third_city}".format(
+                    "text": "_The closest visitor visa appointment is available in {first_city} in {first_number} {first_unit} followed by {second_city} and {third_city}_".format(
                         first_city = first_closest_appointment.city,
                         first_number = first_closest_appointment.get_visitor_visa_wait_time().value,
                         first_unit = first_closest_appointment.get_visitor_visa_wait_time().unit.value,
