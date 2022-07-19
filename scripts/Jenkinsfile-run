@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        label 'docker'
+    }
+
+    environment {
+        SLACK_TOKEN = credentials('SLACK_TOKEN')
+    }
+
+    stages {
+        stage ('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage ('Run') {
+            steps {
+                sh """
+                    SLACK_TOKEN=${SLACK_TOKEN} make run
+                """
+            }
+        }
+    }
+}
