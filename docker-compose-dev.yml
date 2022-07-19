@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  app:
+    stdin_open: true
+    tty: true
+    entrypoint: "/bin/bash"
+    volumes:
+      - ${PWD}/src:/app
