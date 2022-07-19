@@ -1,7 +1,14 @@
 ---
+# Minimum 3 cities are required
+Ottawa:
+  cid: P155
 Calgary:
   cid: P43
-Vancouver:
-  cid: P211
+Halifax:
+  cid: P76
+Quebec:
+  cid: P170
 Toronto:
   cid: P206
+Vancouver:
+  cid: P211
