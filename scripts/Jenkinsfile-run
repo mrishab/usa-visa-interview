@@ -7,6 +7,10 @@ pipeline {
         SLACK_TOKEN = credentials('SLACK_TOKEN')
     }
 
+    triggers {
+        cron('0 */4 * * *')
+    }
+
     stages {
         stage ('Checkout') {
             steps {
