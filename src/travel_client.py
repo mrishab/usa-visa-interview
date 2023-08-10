@@ -13,7 +13,7 @@ class TravelClient:
         url = "{}{}".format(self.host, path)
         res = requests.get(url=url)
         res.raise_for_status()
-        intervals = res.text.strip().split(",")
+        intervals = res.text.strip().split("|")
         if len(intervals) < 3:
             raise Exception("Expected array of length 3, received: {}".format(intervals))
         visitor_visa = intervals[0].split(" ")
